@@ -5,6 +5,7 @@
 @import '_font';
 @import '_debugger';
 @import '_mediaQuery';
+@import '_deviceEventConfirmation';
 
 
 
@@ -14,17 +15,32 @@
 
 
 // CLASS LEVEL ------------------------------------------------------------------------------------
+.componentWrapper {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+  width: 100vw;
+  @include tablet {
+    // flex-direction: initial;
+  }
+  @include desktop {
+    // flex-direction: initial;
+  }
+}
 .mainWrapper {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
   width: 100vw;
+  padding: 24px;
   @include tablet {
-    flex-direction: initial;
+    // flex-direction: initial;
   }
   @include desktop {
-    flex-direction: initial;
+    // flex-direction: initial;
   }
 }
