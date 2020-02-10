@@ -1,0 +1,28 @@
+@charset 'utf-8';
+
+// ELEMENT LEVEL ----------------------------------------------------------------------------------
+
+
+
+
+// CLASS LEVEL ------------------------------------------------------------------------------------
+.statusContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  p {
+    color: $colorLightGray;
+    padding: 1em 0.5em;
+    & + p {
+      margin: 0;
+    }
+  }
+  @include tablet {
+    // flex-direction: initial;
+  }
+  @include desktop {
+    // flex-direction: initial;
+  }
+}
