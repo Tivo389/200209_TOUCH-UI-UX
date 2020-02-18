@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ComponentTemplate extends Component {
+class DeviceEventConfirmation extends Component {
   // LIFECYCLE METHODS
   componentWillMount() {}
   componentDidMount() {}
@@ -29,4 +29,4 @@ class ComponentTemplate extends Component {
   };
 }
 
-export default ComponentTemplate;
+export default DeviceEventConfirmation;
