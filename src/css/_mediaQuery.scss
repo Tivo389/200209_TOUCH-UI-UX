@@ -1,6 +1,8 @@
 // MEDIA QUERY SETTINGS ---------------------------------------------------------------------------
 $tablet: "(min-width: 768px) and (max-width: 1023px)";
 $desktop: "(min-width: 1024px)";
+$pointerCoarse: "(any-pointer: coarse)";
+$pointerFine: "(any-pointer: fine)";
 @mixin tablet {
   @media #{$tablet} {
     @content;
@@ -8,6 +10,16 @@ $desktop: "(min-width: 1024px)";
 }
 @mixin desktop {
   @media #{$desktop} {
+    @content;
+  }
+}
+@mixin pointerCoarse {
+  @media #{$pointerCoarse} {
+    @content;
+  }
+}
+@mixin pointerFine {
+  @media #{$pointerFine} {
     @content;
   }
 }

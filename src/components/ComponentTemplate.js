@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
 class ComponentTemplate extends Component {
+  // COMPONENT VARIALBES
+  state = { foo: true };
+  // - As a state it would require setState(), resulting in a rapid-rendering.
+  bar = false;
+  
   // LIFECYCLE METHODS
-  componentWillMount() {}
   componentDidMount() {}
-  componentWillUpdate() {}
   componentDidUpdate() {}
   componentWillUnmount() {}
 

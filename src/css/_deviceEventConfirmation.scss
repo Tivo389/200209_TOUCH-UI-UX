@@ -7,22 +7,36 @@
 
 // CLASS LEVEL ------------------------------------------------------------------------------------
 .statusContainer {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100vw;
-  p {
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  .statusElement {
+    font-size: 12px;
     color: $colorLightGray;
-    padding: 1em 0.5em;
-    & + p {
+    font-weight: bolder;
+    padding: 0.2em;
+    width: 100%;
+    & + .statusElement {
       margin: 0;
     }
+    &.active {
+      color: $colorDarkGray;
+    } 
+    @include pointerCoarse {
+      &.cssPointerCoarse {
+        color: $colorDarkGray;
+      }
+    }
+    @include pointerFine {
+      &.cssPointerFine {
+        color: $colorDarkGray;
+      }
+    }
   }
-  @include tablet {
-    // flex-direction: initial;
-  }
-  @include desktop {
-    // flex-direction: initial;
-  }
+  @include tablet {}
+  @include desktop {}
+  @include pointerCoarse {}
+  @include pointerFine {}
 }
