@@ -16,12 +16,7 @@
 
 // CLASS LEVEL ------------------------------------------------------------------------------------
 .componentWrapper {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: flex-start;
-  width: 100vw;
+  width: 100%;
   @include tablet {
     // flex-direction: initial;
   }
@@ -34,9 +29,9 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100vw;
-  padding: 24px;
+  padding: 8px;
   @include tablet {
     // flex-direction: initial;
   }
