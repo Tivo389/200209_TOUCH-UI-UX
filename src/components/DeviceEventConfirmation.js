@@ -21,8 +21,13 @@ class DeviceEventConfirmation extends Component {
     return (
       <div className="mainWrapper"
         onTouchStart={this.handleGesture}
-        onClick={this.handleGesture}
-        onTouchEnd={e => e.preventDefault()}>
+        onTouchMove={this.handleGesture}
+        onTouchEnd={(e) => {
+          e.preventDefault();
+          document.querySelector('.jsTouch').classList.remove('active');
+        }}
+        onMouseDown={this.onMouseDown}
+        onMouseUp={this.onMouseUp}>
         <div className="componentWrapper">
           <div className="statusContainer">
             <p className="statusElement cssPointerCoarse">CSS / any-pointer: coarse</p>
@@ -39,21 +44,31 @@ class DeviceEventConfirmation extends Component {
 
   // FUNCTION: BASIC EXPLANATION HERE
   // - Detailed explanation here
+  onMouseMove = (e) => {    
+    const xAxis = Math.round(e.clientX);
+    const yAxis = Math.round(e.clientY);
+    this.setCoordinates(xAxis, yAxis);      
+  };
+  onMouseDown = (e) => {
+    document.querySelector('.jsMouse').classList.add('active');
+    e.currentTarget.addEventListener('mousemove', this.onMouseMove);
+  };
+  onMouseUp = (e) => {
+    document.querySelector('.jsMouse').classList.remove('active');
+    e.currentTarget.removeEventListener('mousemove', this.onMouseMove);
+  };
   handleGesture = (e) => {
     if (e.touches && e.touches.length > 1) {
       return;
     } else if (window.PointerEvent) {
       if (e.targetTouches) {
         console.log('POINTER EVENT / TOUCH ----------');
-        // console.log(`X-AXIS: ${e.targetTouches[0].clientX}`);
-        // console.log(`Y-AXIS: ${e.targetTouches[0].clientY}`);
+        document.querySelector('.jsTouch').classList.add('active');
         const xAxis = Math.round(e.targetTouches[0].clientX);
         const yAxis = Math.round(e.targetTouches[0].clientY);
         this.setCoordinates(xAxis, yAxis);
       } else {
         console.log('POINTER EVENT / MOUSE ----------');
-        // console.log(`X-AXIS: ${e.clientX}`);
-        // console.log(`Y-AXIS: ${e.clientY}`);
         const xAxis = Math.round(e.clientX);
         const yAxis = Math.round(e.clientY);
         this.setCoordinates(xAxis, yAxis);
