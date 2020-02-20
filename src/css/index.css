@@ -417,7 +417,8 @@ a {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 300px;
   justify-content: flex-start;
-  width: 100vw;
-  padding: 8px; }
+  padding: 8px;
+  position: fixed;
+  width: 100vw; }
