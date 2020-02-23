@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { toggleClass } from './Helper';
 
 class DeviceEventConfirmation extends Component {
   // COMPONENT VARIALBES
@@ -43,32 +44,25 @@ class DeviceEventConfirmation extends Component {
 
   // FUNCTION: BASIC EXPLANATION HERE
   onTouchStart = () => {
-    this.toggleClass('.jsTouch', 'active', true);
+    toggleClass('.jsTouch', 'active', true);
   }
   onTouchMove = (e) => {
     this.setCoordinates(e);
   }
   onTouchEnd = (e) => {
     e.preventDefault();
-    this.toggleClass('.jsTouch', 'active', false);
+    toggleClass('.jsTouch', 'active', false);
   }
   onMouseDown = () => {
-    this.toggleClass('.jsMouse', 'active', true);
+    toggleClass('.jsMouse', 'active', true);
     this.mouseIsDown = !this.mouseIsDown;
   };
   onMouseMove = (e) => {
     if (this.mouseIsDown) this.setCoordinates(e);
   };
   onMouseUp = () => {
-    this.toggleClass('.jsMouse', 'active', false);
+    toggleClass('.jsMouse', 'active', false);
     this.mouseIsDown = !this.mouseIsDown;
-  };
-  toggleClass = (targetNode, className, boolean) => {
-    if (boolean) {
-      document.querySelector(targetNode).classList.add(className);
-    } else {
-      document.querySelector(targetNode).classList.remove(className);
-    }
   };
   setCoordinates = (e) => {
     const xAxis = Math.round(e.clientX) || Math.round(e.targetTouches[0].clientX);
