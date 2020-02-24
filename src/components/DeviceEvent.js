@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { toggleClass, throttle } from './Helper';
 
-class DeviceEventConfirmation extends Component {
+class DeviceEvent extends Component {
   // COMPONENT VARIALBES
   state = {}
   xCoordinate = 0;
@@ -72,4 +72,4 @@ class DeviceEventConfirmation extends Component {
   };
 }
 
-export default DeviceEventConfirmation;
+export default DeviceEvent;

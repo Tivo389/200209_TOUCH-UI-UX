@@ -4,20 +4,14 @@ import '../css/index.css';
 function App() {
   return (
     <div className="mainWrapper">
-      <a className="content" href="./deviceEventConfirmation">
-        200209-001a: Device Event Confirmation
+      <a className="content" href="./deviceEvent">
+        200209: Device Event Confirmation
+      </a>
+      <a className="content" href="./buttonEvent">
+        200223: Button Event Confirmation
       </a>
       <a className="content" href="./carouselClick">
-        XXXXXX-002a: Carousel / Click
-      </a>
-      <a className="content" href="./carouselIndicator">
-        XXXXXX-002b: Carousel / Indicator
-      </a>
-      <a className="content" href="./carouselDrag">
-        XXXXXX-002c: Carousel / Drag
-      </a>
-      <a className="content" href="./carouselInterface">
-        XXXXXX-002d: Carousel
+        XXXXXX-XXX: Carousel / Click
       </a>
     </div>
   );
