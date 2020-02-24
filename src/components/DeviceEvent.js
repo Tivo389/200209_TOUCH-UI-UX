@@ -18,12 +18,15 @@ class DeviceEvent extends Component {
     return (
       <div className="mainWrapper"
         onMouseDown={this.onMouseDown}
-        onMouseMove={throttle(this.onMouseMove, 100)}
+        onMouseMove={throttle(this.onMouseMove, 16)}
         onMouseUp={this.onMouseUp}
+        onMouseLeave={this.onMouseUp}
         onTouchStart={this.onTouchStart}
-        onTouchMove={throttle(this.onTouchMove, 100)}
+        onTouchMove={throttle(this.onTouchMove, 16)}
         onTouchEnd={this.onTouchEnd}
+        onTouchCancel={this.onTouchEnd}
         style={{ height: window.innerHeight }}>
+        <div className="locationIndicator"></div>
         <div className="componentWrapper">
           <div className="statusContainer">
             <p className="statusElement cssPointerCoarse">CSS / any-pointer: coarse</p>
@@ -42,33 +45,61 @@ class DeviceEvent extends Component {
     );
   }
 
-  // FUNCTION: BASIC EXPLANATION HERE
-  onTouchStart = () => {
-    toggleClass('.jsTouch', 'active', true);
+  // FUNCTIONS / START EVENT
+  onTouchStart = (e) => {
+    this.handleStart(e, 'Touch');
   }
+  onMouseDown = (e) => {
+    this.mouseIsDown = !this.mouseIsDown;
+    this.handleStart(e, 'Mouse');
+  };
+  handleStart = (e, type) => {
+    this.setXY(e);
+    this.setIndicatorXY();
+    toggleClass(`.js${type}`, 'active', true);
+    toggleClass('.locationIndicator', 'active', true);
+  };
+
+  // FUNCTIONS / MOVE EVENT
   onTouchMove = (e) => {
-    this.setCoordinates(e);
+    this.handleMove(e);
   }
-  onTouchEnd = (e) => {
-    e.preventDefault();
-    toggleClass('.jsTouch', 'active', false);
-  }
-  onMouseDown = () => {
-    toggleClass('.jsMouse', 'active', true);
-    this.mouseIsDown = !this.mouseIsDown;
-  };
   onMouseMove = (e) => {
-    if (this.mouseIsDown) this.setCoordinates(e);
+    if (this.mouseIsDown) this.handleMove(e);
   };
-  onMouseUp = () => {
-    toggleClass('.jsMouse', 'active', false);
+  handleMove = (e) => {
+    this.setXY(e);
+    this.setIndicatorXY();
+  };
+
+  // FUNCTIONS / END EVENT
+  onTouchEnd = (e) => {
+    this.handleEnd('Touch');
+    e.preventDefault();
+  }
+  onMouseUp = (e) => {
     this.mouseIsDown = !this.mouseIsDown;
+    this.handleEnd('Mouse');
   };
-  setCoordinates = (e) => {
-    const xAxis = Math.round(e.clientX) || Math.round(e.targetTouches[0].clientX);
-    const yAxis = Math.round(e.clientY) || Math.round(e.targetTouches[0].clientY);
-    document.querySelector('#xCoordinate').innerText = xAxis;
-    document.querySelector('#yCoordinate').innerText = yAxis;
+  handleEnd = (type) => {
+    this.setIndicatorXY();
+    toggleClass(`.js${type}`, 'active', false);
+    toggleClass('.locationIndicator', 'active', false);
+  };
+
+  // FUNCTIONS / OTHER
+  setXY = (e) => {
+    this.xCoordinate = Math.round(e.clientX) || Math.round(e.targetTouches[0].clientX);
+    this.yCoordinate = Math.round(e.clientY) || Math.round(e.targetTouches[0].clientY);
+    document.querySelector('#xCoordinate').innerText = this.xCoordinate;
+    document.querySelector('#yCoordinate').innerText = this.yCoordinate;
+  };
+  setIndicatorXY = () => {
+    const indicator = document.querySelector('.locationIndicator');
+    indicator.style = `transform: translate(
+                        calc(-50% + ${this.xCoordinate}px),
+                        calc(-50% + ${this.yCoordinate}px)
+                      )`;
   };
 }
 

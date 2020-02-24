@@ -24,6 +24,19 @@
     // flex-direction: initial;
   }
 }
+.locationIndicator {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 0, 0, 0.4);
+  border-radius: 22px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  &.active {
+    opacity: 1;
+  }
+}
 .mainWrapper {
   align-items: flex-start;
   display: flex;
