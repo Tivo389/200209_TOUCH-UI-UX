@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { toggleClass } from './Helper';
+import { toggleClass, throttle } from './Helper';
 
 class DeviceEventConfirmation extends Component {
   // COMPONENT VARIALBES
@@ -18,10 +18,10 @@ class DeviceEventConfirmation extends Component {
     return (
       <div className="mainWrapper"
         onMouseDown={this.onMouseDown}
-        onMouseMove={this.onMouseMove}
+        onMouseMove={throttle(this.onMouseMove, 100)}
         onMouseUp={this.onMouseUp}
         onTouchStart={this.onTouchStart}
-        onTouchMove={this.onTouchMove}
+        onTouchMove={throttle(this.onTouchMove, 100)}
         onTouchEnd={this.onTouchEnd}
         style={{ height: window.innerHeight }}>
         <div className="componentWrapper">
