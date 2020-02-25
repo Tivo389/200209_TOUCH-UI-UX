@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ButtonEvent extends Component {
+class AnchorEvent extends Component {
   // COMPONENT VARIALBES
   state = { foo: true };
   // - As a state it would require setState(), resulting in a rapid-rendering.
@@ -15,7 +15,9 @@ class ButtonEvent extends Component {
   render() {
     return (
       <div className="mainWrapper" style={{ height: window.innerHeight }}>
-        <h1>Hello World!</h1>
+        <div className="anchorCTAWrapper">
+          <a className="anchorCTA" href="./anchorEvent">Learn more</a>
+        </div>
       </div>
     );
   }
@@ -27,4 +29,4 @@ class ButtonEvent extends Component {
   };
 }
 
-export default ButtonEvent;
+export default AnchorEvent;
