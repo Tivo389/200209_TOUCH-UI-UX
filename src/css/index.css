@@ -447,32 +447,23 @@ a {
   border-radius: 3px;
   border: 2px solid rgba(126, 126, 126, 0.3);
   font-family: "Google Sans","Roboto","Arial",sans-serif;
-  font-size: 3.2rem;
+  font-size: 1.4rem;
   font-weight: 500;
-  padding: 0.4em 0.8em;
+  padding: 0.5em 0.8em 0.4em 0.8em;
   position: relative;
   text-align: center;
   text-decoration: none;
+  transition: all 240ms cubic-bezier(0.1, 0.1, 0, 1);
+  user-select: none;
   -webkit-tap-highlight-color: transparent; }
-  .anchorCTA::before {
-    display: block;
-    content: "";
-    border-radius: 3px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    visibility: hidden;
-    transform-origin: center center;
-    transition: all 240ms cubic-bezier(0.1, 0.1, 0, 1);
-    background: #423F3F; }
-  .anchorCTA:hover {
+  .anchorCTA:hover, .anchorCTA:active {
+    background: #423F3F;
+    border: 2px solid #423F3F;
     color: #FFFFFF; }
-    .anchorCTA:hover::before {
-      visibility: visible;
-      opacity: 1;
-      transform: scale3d(1, 1, 1); }
+  .anchorCTA:active {
+    transform: translateY(4px); }
   .anchorCTA::-moz-focus-inner {
     border: 0; }
+  @media (min-width: 768px) {
+    .anchorCTA {
+      font-size: 1.6rem; } }

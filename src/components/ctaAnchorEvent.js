@@ -16,7 +16,10 @@ class AnchorEvent extends Component {
     return (
       <div className="mainWrapper" style={{ height: window.innerHeight }}>
         <div className="anchorCTAWrapper">
-          <a className="anchorCTA" href="./anchorEvent">Learn more</a>
+          <a
+            className="anchorCTA"
+            href="./anchorEvent"
+            onTouchStart="this.onTouchStart">Learn more</a>
         </div>
       </div>
     );
@@ -24,8 +27,9 @@ class AnchorEvent extends Component {
 
   // FUNCTION: BASIC EXPLANATION HERE
   // - Detailed explanation here
-  sampleFunction = () => {
-    console.log('sampleFunction!');
+  onTouchStart = (e) => {
+    e.preventDefault();
+    // 999 CONTINUE HERE ADDBACK GROUND AN REMOVE ON DONE
   };
 }
 
