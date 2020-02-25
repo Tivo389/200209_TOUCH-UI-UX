@@ -27,7 +27,7 @@ class DeviceEvent extends Component {
         onTouchCancel={this.onTouchEnd}
         style={{ height: window.innerHeight }}>
         <div className="locationIndicator"></div>
-        <div className="componentWrapper">
+        <div className="deviceEventWrapper">
           <div className="statusContainer">
             <p className="statusElement cssPointerCoarse">CSS / any-pointer: coarse</p>
             <p className="statusElement cssPointerFine">CSS / any-pointer: fine</p>
@@ -77,7 +77,7 @@ class DeviceEvent extends Component {
     this.handleEnd('Touch');
     e.preventDefault();
   }
-  onMouseUp = (e) => {
+  onMouseUp = () => {
     this.mouseIsDown = !this.mouseIsDown;
     this.handleEnd('Mouse');
   };
