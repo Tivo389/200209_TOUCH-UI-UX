@@ -7,7 +7,7 @@ function App() {
       <a className="content" href="./deviceEvent">
         200209: Device Event Confirmation
       </a>
-      <a className="content" href="./anchorEvent">
+      <a className="content" href="./anchorEventAlpha">
         200223: CTA Anchor Event Confirmation
       </a>
       <a className="content" href="./carouselClick">
