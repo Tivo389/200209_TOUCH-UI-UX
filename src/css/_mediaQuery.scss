@@ -13,6 +13,16 @@ $pointerFine: "(any-pointer: fine)";
     @content;
   }
 }
+@mixin hoverPresent {
+  @media (hover: hover) {
+    @content;
+  }
+}
+@mixin hoverAbsent {
+  @media (hover: none) {
+    @content;
+  }
+}
 @mixin pointerCoarse {
   @media #{$pointerCoarse} {
     @content;

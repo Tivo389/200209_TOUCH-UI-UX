@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class AnchorEvent extends Component {
+class AnchorEventBeta extends Component {
   // COMPONENT VARIALBES
   state = { foo: true };
   // - As a state it would require setState(), resulting in a rapid-rendering.
@@ -16,10 +16,13 @@ class AnchorEvent extends Component {
     return (
       <div className="mainWrapper" style={{ height: window.innerHeight }}>
         <div className="anchorCTAWrapper">
+          <h4>BETA</h4>
           <a
             className="anchorCTA"
-            href="./anchorEvent"
-            onTouchStart="this.onTouchStart">Learn more</a>
+            href="/anchorEventAlpha"
+            onTouchStart={this.onTouchStart}
+            onTouchEnd={this.onTouchEnd}
+            onClick={this.onClick}>Move to Alpha</a>
         </div>
       </div>
     );
@@ -29,8 +32,21 @@ class AnchorEvent extends Component {
   // - Detailed explanation here
   onTouchStart = (e) => {
     e.preventDefault();
-    // 999 CONTINUE HERE ADDBACK GROUND AN REMOVE ON DONE
+  };
+  onTouchEnd = (e) => {
+    const navTarget = e.currentTarget.getAttribute('href');
+    e.preventDefault();
+    setTimeout(() => {
+      window.location.href = navTarget
+    }, 100);
+  };
+  onClick = (e) => {
+    const navTarget = e.currentTarget.getAttribute('href');
+    e.preventDefault();
+    setTimeout(() => {
+      window.location.href = navTarget
+    }, 100);
   };
 }
 
-export default AnchorEvent;
+export default AnchorEventBeta;
