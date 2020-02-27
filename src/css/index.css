@@ -452,7 +452,7 @@ a {
   font-family: "Google Sans","Roboto","Arial",sans-serif;
   font-size: 1.4rem;
   font-weight: 500;
-  padding: 0.5em 0.8em 0.4em 0.8em;
+  padding: 0.7em 1em 0.6em 1em;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -460,10 +460,12 @@ a {
   user-select: none;
   -webkit-tap-highlight-color: transparent; }
   .anchorCTA:focus {
-    background: #423F3F; }
+    background: #423F3F;
+    color: #FFFFFF; }
   .anchorCTA:active {
     transform: translateY(4px);
-    background: #423F3F; }
+    background: #423F3F;
+    color: #FFFFFF; }
   .anchorCTA::-moz-focus-inner {
     border: 0; }
   @media (hover: none) {
@@ -472,8 +474,8 @@ a {
   @media (hover: hover) {
     .anchorCTA:hover {
       background: #423F3F;
-      border: 2px solid #423F3F;
       color: #FFFFFF; } }
   @media (min-width: 768px) {
     .anchorCTA {
-      font-size: 1.6rem; } }
+      font-size: 1.4rem;
+      padding: 0.5em 0.8em 0.4em 0.8em; } }

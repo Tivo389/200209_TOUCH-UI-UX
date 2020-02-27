@@ -71,7 +71,7 @@
   font-family: "Google Sans","Roboto","Arial",sans-serif;
   font-size: 1.4rem;
   font-weight: 500;
-  padding: 0.5em 0.8em 0.4em 0.8em;
+  padding: 0.7em 1em 0.6em 1em;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -80,10 +80,12 @@
   -webkit-tap-highlight-color: transparent; // Safari & Chrome Negate
   &:focus {
     background: #423F3F;
+    color: #FFFFFF;
   }
   &:active {
     transform: translateY(4px);
     background: #423F3F;
+    color: #FFFFFF;
   }
   &::-moz-focus-inner {
     border: 0;
@@ -94,11 +96,11 @@
   @include hoverPresent {
     &:hover {
       background: #423F3F;
-      border: 2px solid #423F3F;
       color: #FFFFFF;
     }
   }
   @include tablet {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    padding: 0.5em 0.8em 0.4em 0.8em;
   }
 }
