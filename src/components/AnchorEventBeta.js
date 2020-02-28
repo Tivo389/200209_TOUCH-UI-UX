@@ -1,17 +1,7 @@
 import React, { Component } from 'react';
+import { delayAnchor } from './Helper';
 
 class AnchorEventBeta extends Component {
-  // COMPONENT VARIALBES
-  state = { foo: true };
-  // - As a state it would require setState(), resulting in a rapid-rendering.
-  bar = false;
-
-  // LIFECYCLE METHODS
-  componentDidMount() {}
-  componentDidUpdate() {}
-  componentWillUnmount() {}
-
-  // RENDER OF COMPONENT
   render() {
     return (
       <div className="mainWrapper" style={{ height: window.innerHeight }}>
@@ -20,7 +10,6 @@ class AnchorEventBeta extends Component {
           <a
             className="anchorCTA"
             href="/anchorEventAlpha"
-            onTouchStart={this.onTouchStart}
             onTouchEnd={this.onTouchEnd}
             onClick={this.onClick}>Move to Alpha</a>
         </div>
@@ -28,25 +17,8 @@ class AnchorEventBeta extends Component {
     );
   }
 
-  // FUNCTION: BASIC EXPLANATION HERE
-  // - Detailed explanation here
-  onTouchStart = (e) => {
-    e.preventDefault();
-  };
-  onTouchEnd = (e) => {
-    const navTarget = e.currentTarget.getAttribute('href');
-    e.preventDefault();
-    setTimeout(() => {
-      window.location.href = navTarget
-    }, 100);
-  };
-  onClick = (e) => {
-    const navTarget = e.currentTarget.getAttribute('href');
-    e.preventDefault();
-    setTimeout(() => {
-      window.location.href = navTarget
-    }, 100);
-  };
+  onTouchEnd = (e) => delayAnchor(e);
+  onClick = (e) => delayAnchor(e);
 }
 
 export default AnchorEventBeta;
