@@ -2,18 +2,6 @@ import React, { Component } from 'react';
 import { toggleClass, throttle } from './Helper';
 
 class DeviceEvent extends Component {
-  // COMPONENT VARIALBES
-  state = {}
-  xCoordinate = 0;
-  yCoordinate = 0;
-  mouseIsDown = false;
-
-  // LIFECYCLE METHODS
-  componentDidMount() {}
-  componentDidUpdate() {}
-  componentWillUnmount() {}
-
-  // RENDER OF COMPONENT
   render() {
     return (
       <div className="mainWrapper"

@@ -14,4 +14,12 @@ export const throttle = (func, limit) => {
       inThrottle = setTimeout(() => { inThrottle = false }, limit);
     }
   }
-}
+};
+
+export const delayAnchor = (e) => {
+  const navTarget = e.currentTarget.getAttribute('href');
+  e.preventDefault();
+  setTimeout(() => {
+    window.location.href = navTarget
+  }, 100);
+};
