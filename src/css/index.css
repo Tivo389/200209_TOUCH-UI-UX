@@ -361,6 +361,9 @@ a {
     a.content:hover {
       text-decoration: underline; }
 
+li {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
 .monospace {
   font-family: 'Courier New', monospace; }
 
@@ -402,13 +405,13 @@ a {
     .statusContainer .statusElement + .statusElement {
       margin: 0; }
     .statusContainer .statusElement.active {
-      color: #333333; }
+      color: #423F3F; }
     @media (any-pointer: coarse) {
       .statusContainer .statusElement.cssPointerCoarse {
-        color: #333333; } }
+        color: #423F3F; } }
     @media (any-pointer: fine) {
       .statusContainer .statusElement.cssPointerFine {
-        color: #333333; } }
+        color: #423F3F; } }
 
 .deviceEventWrapper {
   width: 100%; }
@@ -435,16 +438,38 @@ a {
   width: 100vw; }
 
 .anchorCTAWrapper {
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start; }
+
+.anchorEventWrapper {
+  align-items: flex-start;
   display: flex;
   height: 100%;
   justify-content: center;
   width: 100%;
-  flex-direction: column; }
-  .anchorCTAWrapper h4 {
+  flex-direction: column;
+  color: #777777; }
+  .anchorEventWrapper h4 {
     margin: 0 0 1em 0; }
+  .anchorEventWrapper p {
+    color: #777777;
+    margin: 2em 0 0.4em 0;
+    font-size: 1.6rem;
+    letter-spacing: 0.02em;
+    font-weight: bolder; }
+  .anchorEventWrapper ul {
+    list-style-position: inside;
+    padding: 0 0 0 0.25em;
+    margin: 0; }
+    .anchorEventWrapper ul li {
+      margin: 0 0 0.25em 0;
+      font-size: 1.6rem;
+      letter-spacing: 0.02em; }
 
-.anchorCTA {
+.anchorCTAStandard {
+  flex: 0 0 auto;
   background-image: none;
   background: transparent;
   border-radius: 3px;
@@ -456,26 +481,26 @@ a {
   position: relative;
   text-align: center;
   text-decoration: none;
-  transition: all 180ms ease-in-out;
+  transition: background-color 240ms cubic-bezier(0.4, 0.4, 0, 1);
   user-select: none;
   -webkit-tap-highlight-color: transparent; }
-  .anchorCTA:focus {
+  .anchorCTAStandard:focus {
     background: #423F3F;
     color: #FFFFFF; }
-  .anchorCTA:active {
+  .anchorCTAStandard:active {
     transform: translateY(4px);
     background: #423F3F;
     color: #FFFFFF; }
-  .anchorCTA::-moz-focus-inner {
+  .anchorCTAStandard::-moz-focus-inner {
     border: 0; }
   @media (hover: none) {
-    .anchorCTA {
+    .anchorCTAStandard {
       transition: all 60ms ease-in-out; } }
   @media (hover: hover) {
-    .anchorCTA:hover {
+    .anchorCTAStandard:hover {
       background: #423F3F;
       color: #FFFFFF; } }
   @media (min-width: 768px) {
-    .anchorCTA {
+    .anchorCTAStandard {
       font-size: 1.4rem;
       padding: 0.5em 0.8em 0.4em 0.8em; } }
