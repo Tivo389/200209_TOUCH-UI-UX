@@ -1,24 +1,12 @@
 import React, { Component } from 'react';
-import { delayAnchor } from './Helper';
+import AnchorEventComponent from './AnchorEventComponent';
 
 class AnchorEventBeta extends Component {
   render() {
     return (
-      <div className="mainWrapper" style={{ height: window.innerHeight }}>
-        <div className="anchorCTAWrapper">
-          <h4>BETA</h4>
-          <a
-            className="anchorCTA"
-            href="/anchorEventAlpha"
-            onTouchEnd={this.onTouchEnd}
-            onClick={this.onClick}>Move to Alpha</a>
-        </div>
-      </div>
+      <AnchorEventComponent name="Beta" href="Alpha"/>
     );
   }
-
-  onTouchEnd = (e) => delayAnchor(e);
-  onClick = (e) => delayAnchor(e);
 }
 
 export default AnchorEventBeta;
