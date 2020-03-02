@@ -76,16 +76,6 @@
     letter-spacing: 0.02em;
     font-weight: bolder;
   }
-  & ul {
-    list-style-position: inside;
-    padding: 0 0 0 0.25em;
-    margin: 0;
-    & li {
-      margin: 0 0 0.25em 0;
-      font-size: 1.6rem;
-      letter-spacing: 0.02em;
-    }
-  }
 }
 .anchorCTAStandard {
   flex: 0 0 auto;
@@ -104,7 +94,7 @@
   user-select: none;
   -webkit-tap-highlight-color: transparent; // Safari & Chrome Negate
   &:focus {
-    background: $colorDarkGray;
+    background: red;
     color: $colorWhite;
   }
   &:active {
@@ -118,14 +108,24 @@
   @include hoverAbsent {
     transition: all 60ms ease-in-out;
   }
-  @include hoverPresent {
+  // @include hoverPresent {
     &:hover {
-      background: $colorDarkGray;
+      background: red;
       color: $colorWhite;
     }
-  }
+  // }
   @include tablet {
     font-size: 1.4rem;
     padding: 0.5em 0.8em 0.4em 0.8em;
+  }
+}
+.feedback {
+  list-style-position: inside;
+  padding: 0 0 0 0.25em;
+  margin: 0;
+  & li {
+    margin: 0 0 0.25em 0;
+    font-size: 1.4rem;
+    letter-spacing: 0.02em;
   }
 }

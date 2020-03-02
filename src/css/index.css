@@ -459,14 +459,6 @@ li {
     font-size: 1.6rem;
     letter-spacing: 0.02em;
     font-weight: bolder; }
-  .anchorEventWrapper ul {
-    list-style-position: inside;
-    padding: 0 0 0 0.25em;
-    margin: 0; }
-    .anchorEventWrapper ul li {
-      margin: 0 0 0.25em 0;
-      font-size: 1.6rem;
-      letter-spacing: 0.02em; }
 
 .anchorCTAStandard {
   flex: 0 0 auto;
@@ -485,7 +477,7 @@ li {
   user-select: none;
   -webkit-tap-highlight-color: transparent; }
   .anchorCTAStandard:focus {
-    background: #423F3F;
+    background: red;
     color: #FFFFFF; }
   .anchorCTAStandard:active {
     transform: translateY(4px);
@@ -496,11 +488,19 @@ li {
   @media (hover: none) {
     .anchorCTAStandard {
       transition: all 60ms ease-in-out; } }
-  @media (hover: hover) {
-    .anchorCTAStandard:hover {
-      background: #423F3F;
-      color: #FFFFFF; } }
+  .anchorCTAStandard:hover {
+    background: red;
+    color: #FFFFFF; }
   @media (min-width: 768px) {
     .anchorCTAStandard {
       font-size: 1.4rem;
       padding: 0.5em 0.8em 0.4em 0.8em; } }
+
+.feedback {
+  list-style-position: inside;
+  padding: 0 0 0 0.25em;
+  margin: 0; }
+  .feedback li {
+    margin: 0 0 0.25em 0;
+    font-size: 1.4rem;
+    letter-spacing: 0.02em; }
