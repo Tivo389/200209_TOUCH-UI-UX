@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import AnchorEventComponent from './AnchorEventComponent';
+import StandardCTAComponent from './StandardCTAComponent';
 
 class AnchorEventAlpha extends Component {
   render() {
     return (
-      <AnchorEventComponent name="Alpha" href="Beta"/>
+      <StandardCTAComponent name="Alpha" href="Beta"/>
     );
   }
 }

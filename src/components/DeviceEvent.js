@@ -17,8 +17,14 @@ class DeviceEvent extends Component {
         <div className="locationIndicator"></div>
         <div className="deviceEventWrapper">
           <div className="statusContainer">
-            <p className="statusElement cssPointerCoarse">CSS / any-pointer: coarse</p>
-            <p className="statusElement cssPointerFine">CSS / any-pointer: fine</p>
+            <p className="statusElement cssAnyPointerCoarse">CSS / any-pointer: coarse</p>
+            <p className="statusElement cssAnyPointerFine">CSS / any-pointer: fine</p>
+            <p className="statusElement cssPointerCoarse">CSS / pointer: coarse</p>
+            <p className="statusElement cssPointerFine">CSS / pointer: fine</p>
+            <p className="statusElement cssAnyHoverNone">CSS / any-hover: none</p>
+            <p className="statusElement cssAnyHover">CSS / any-hover: hover</p>
+            <p className="statusElement cssHoverNone">CSS / hover: none</p>
+            <p className="statusElement cssHover">CSS / hover: hover</p>
             <p className="statusElement jsTouch">JS / Touch Gesture</p>
             <p className="statusElement jsMouse">JS / Mouse Gesture</p>
             <p className="statusElement active">X:&ensp;

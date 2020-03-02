@@ -1,35 +1,52 @@
 // MEDIA QUERY SETTINGS ---------------------------------------------------------------------------
-$tablet: "(min-width: 768px)";
-$desktop: "(min-width: 1024px)";
-$pointerCoarse: "(any-pointer: coarse)";
-$pointerFine: "(any-pointer: fine)";
 @mixin tablet {
-  @media #{$tablet} {
+  @media (min-width: 768px) {
     @content;
   }
 }
 @mixin desktop {
-  @media #{$desktop} {
+  @media (min-width: 1024px) {
     @content;
   }
 }
-@mixin hoverPresent {
-  @media (hover: hover) {
+@mixin cssAnyPointerCoarse {
+  @media (any-pointer: coarse) {
     @content;
   }
 }
-@mixin hoverAbsent {
+@mixin cssAnyPointerFine {
+  @media (any-pointer: fine) {
+    @content;
+  }
+}
+@mixin cssPointerCoarse {
+  @media (pointer: coarse) {
+    @content;
+  }
+}
+@mixin cssPointerFine {
+  @media (pointer: fine) {
+    @content;
+  }
+}
+@mixin cssAnyHoverNone {
+  @media (any-hover: none) {
+    @content;
+  }
+}
+@mixin cssAnyHover {
+  @media (any-hover: hover) {
+    @content;
+  }
+}
+@mixin cssHoverNone {
   @media (hover: none) {
     @content;
   }
 }
-@mixin pointerCoarse {
-  @media #{$pointerCoarse} {
+@mixin cssHover {
+  @media (hover: hover) {
     @content;
   }
 }
-@mixin pointerFine {
-  @media #{$pointerFine} {
-    @content;
-  }
-}
+
