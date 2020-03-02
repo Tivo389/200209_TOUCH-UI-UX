@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Feedback from './Feedback';
 
-class AnchorEventComponent extends Component {
+class StandardCTAComponent extends Component {
   render() {
     const {href, name} = this.props;
     const standardCTAFeedback = [
@@ -31,4 +31,4 @@ class AnchorEventComponent extends Component {
   }
 }
 
-export default AnchorEventComponent;
+export default StandardCTAComponent;
