@@ -3,7 +3,7 @@ import '../css/index.css';
 
 function App() {
   return (
-    <div className="mainWrapper">
+    <div className="mainWrapper" style={{ height: window.innerHeight }}>
       <a className="content" href="./deviceEvent">
         200209: Device Event Confirmation
       </a>

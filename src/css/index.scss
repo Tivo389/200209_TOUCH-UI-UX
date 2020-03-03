@@ -22,22 +22,21 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: 8px;
-  position: fixed; // This keeps the screen still on mobile
-  width: 100vw;
-  @include tablet {
-    // flex-direction: initial;
-  }
-  @include desktop {
-    // flex-direction: initial;
+  width: 100%;
+  &.fixed {
+    position: fixed; // This keeps the screen still on mobile
   }
 }
 .feedback {
-  list-style-position: inside;
-  padding: 0 0 0 0.25em;
+  list-style-position: outside;
+  padding: 0 0 0 2em;
   margin: 0;
   & li {
     margin: 0 0 0.25em 0;
     font-size: 1.4rem;
     letter-spacing: 0.02em;
+    &:last-of-type {
+      margin: 0;
+    }
   }
 }
