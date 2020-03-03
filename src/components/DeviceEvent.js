@@ -4,7 +4,7 @@ import { toggleClass, throttle } from './Helper';
 class DeviceEvent extends Component {
   render() {
     return (
-      <div className="mainWrapper"
+      <div className="mainWrapper fixed"
         onMouseDown={this.onMouseDown}
         onMouseMove={throttle(this.onMouseMove, 16)}
         onMouseUp={this.onMouseUp}
