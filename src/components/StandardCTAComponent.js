@@ -5,19 +5,22 @@ class StandardCTAComponent extends Component {
   render() {
     const {href} = this.props;
     const standardCTAFeedback = [
-      '200228 / This CTA takes the conventional focus, hover, active flow.',
-      '200228 / :active is reflected on desktop CFS browsers.',
-      '200228 / :active is reflected only in Firefox in mobile.  Feedback is provided.',
-      '200228 / :active is not reflected in Chrome and Safari mobile. Feedback is not provided.',
-      '200301 / :focus is reflected in desktop',
-      '200301 / :focus is not reflected in mobile',
-      '200301 / :hover is reflected in desktop',
-      '200301 / :hover is reflected in mobile with slight inconsistency between browsers. However, if hover css media feature is used it is (understandably) not reflected. Using hover css media offered better consistency in mobile. However lack of feedback is an issue.',
+      'This CTA takes the conventional styling approach.',
+      ':hover is reflected in desktop',
+      ':hover is hinted in mobile Chrome and Safari',
+      ':hover is reflected in mobile Firefox but not comfortably accessible',
+      ':focus is reflected in desktop',
+      ':focus is not reflected in mobile',
+      ':active is reflected in desktop',
+      ':active is reflected in mobile Firefox',
+      ':active is not reflected in mobile Chrome and Safari',
+      'Firefox reflects hover (ineffectively), does not reflect focus, reflects active',
+      'Chrome and Safari hints hover, does not reflect focus, does not reflect active',
     ];
     return (
-      <div className="anchorCTAWrapper">
+      <div className="ctaContainer">
         <p>Standard CTA</p>
-        <a className="cta ctaStandard" href={`/anchorEvent${href}`}>
+        <a className="ctaStandard" href={`/anchorEvent${href}`}>
           Move to {href}
         </a>
         <Feedback feedBackArray={standardCTAFeedback}/>
