@@ -6,7 +6,7 @@ class AnchorEventBeta extends Component {
   render() {
     return (
       <div className="mainWrapper">
-        <div className="anchorEventWrapper">
+        <div className="ctaEventContainer">
           <h4>Beta</h4>
           <StandardCTAComponent href="Alpha"/>
           <AdvancedCTAComponent href="Alpha"/>

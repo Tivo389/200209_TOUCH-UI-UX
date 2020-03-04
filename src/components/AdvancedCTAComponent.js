@@ -8,14 +8,21 @@ class AdvancedCTAComponent extends Component {
       'N/A'
     ];
     return (
-      <div className="anchorCTAWrapper">
+      <div className="ctaContainer">
         <p>Advanced CTA</p>
-        <a className="cta ctaAdvanced" href={`/anchorEvent${href}`}>
+        <a className="ctaAdvanced" href={`/anchorEvent${href}`}>
           Move to {href}
         </a>
         <Feedback feedBackArray={advancedCTAFeedback}/>
       </div>
     );
+  }
+  componentDidMount() {
+    const onFirstTouch = () => {
+      document.body.classList.add('touch');
+      window.removeEventListener('touchstart', onFirstTouch, false);
+    };
+    window.addEventListener('touchstart', onFirstTouch, false);
   }
 }
 

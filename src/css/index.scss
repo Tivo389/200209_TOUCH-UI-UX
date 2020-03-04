@@ -6,16 +6,8 @@
 @import '_debugger';
 @import '_mediaQuery';
 @import '_deviceEventConfirmation';
-@import '_standardCTA';
+@import '_callToAction';
 
-
-
-// ELEMENT LEVEL ----------------------------------------------------------------------------------
-
-
-
-
-// CLASS LEVEL ------------------------------------------------------------------------------------
 .mainWrapper {
   align-items: flex-start;
   display: flex;
@@ -27,13 +19,14 @@
     position: fixed; // This keeps the screen still on mobile
   }
 }
+
 .feedback {
   list-style-position: outside;
   padding: 0 0 0 2em;
   margin: 0;
   & li {
     margin: 0 0 0.25em 0;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     letter-spacing: 0.02em;
     &:last-of-type {
       margin: 0;
