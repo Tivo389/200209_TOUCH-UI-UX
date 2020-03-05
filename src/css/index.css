@@ -504,18 +504,41 @@ li {
   @media (hover: none) {
     .ctaAdvanced {
       transition: all 60ms ease-in-out; } }
-  @media (hover: hover) {
-    .ctaAdvanced:hover {
-      background: red;
-      color: #FFFFFF; } }
   @media (min-width: 768px) {
     .ctaAdvanced {
       font-size: 1.6rem;
       padding: 0.5em 0.8em 0.4em 0.8em; } }
+  .ctaAdvanced::before {
+    content: "";
+    opacity: 0;
+    transform-origin: center center;
+    transform: scale3d(0.9, 0.65, 0.8);
+    transition: all 240ms cubic-bezier(0.4, 0.4, 0, 1);
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 3px;
+    background-color: red;
+    visibility: hidden; }
+  .ctaAdvanced span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center; }
+  .ctaAdvanced:hover {
+    cursor: pointer; }
+    .ctaAdvanced:hover span {
+      position: relative;
+      color: #fff !important; }
+    .ctaAdvanced:hover::before {
+      opacity: 1.0;
+      transform: scale3d(1, 1, 1);
+      visibility: visible; }
   .ctaAdvanced:focus {
     background: green;
     color: #FFFFFF; }
-  .ctaAdvanced:active {
+  .ctaAdvanced:active, .ctaAdvanced.active {
     transform: translateY(4px);
     background: blue;
     color: #FFFFFF; }

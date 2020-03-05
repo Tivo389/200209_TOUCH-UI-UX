@@ -5,17 +5,21 @@ class StandardCTAComponent extends Component {
   render() {
     const {href} = this.props;
     const standardCTAFeedback = [
+      '200305',
       'This CTA takes the conventional styling approach.',
       ':hover is reflected in desktop',
-      ':hover is hinted in mobile Chrome and Safari',
-      ':hover is reflected in mobile Firefox but not comfortably accessible',
       ':focus is reflected in desktop',
-      ':focus is not reflected in mobile',
       ':active is reflected in desktop',
-      ':active is reflected in mobile Firefox',
-      ':active is not reflected in mobile Chrome and Safari',
-      'Firefox reflects hover (ineffectively), does not reflect focus, reflects active',
-      'Chrome and Safari hints hover, does not reflect focus, does not reflect active',
+      'Chrome iOS / Quick tap / Seems to go :active > :hover with a partial colour transition.',
+      'Chrome iOS / Tap / :active is reflected with full colour transition.',
+      'Chrome iOS / Tap > Hold > Scroll / Goes :active but stays on :hover upon touchEnd.',
+      'Chrome iOS / Tap > Hold > Scroll / Consecutive states were not reflected in some cases.',
+      'Firefox iOS / Quick tap / Same as Chrome.',
+      'Firefox iOS / Tap / Same as Chrome.',
+      'Firefox iOS / Tap > Hold > Scroll / Same as Chrome. No issue with consecutive states.',
+      'Safari iOS / Quick tap / Same as Chrome.',
+      'Safari iOS / Tap / Almost same as Chrome. Seems to hint the hover state upon touchEnd.',
+      'Safari iOS / Tap > Hold > Scroll / Same as Chrome. However, was stuck in :hover state.',
     ];
     return (
       <div className="ctaContainer">

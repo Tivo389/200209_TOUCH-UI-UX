@@ -11,7 +11,7 @@ class AdvancedCTAComponent extends Component {
       <div className="ctaContainer">
         <p>Advanced CTA</p>
         <a className="ctaAdvanced" href={`/anchorEvent${href}`}>
-          Move to {href}
+          <span>Move to {href}</span>
         </a>
         <Feedback feedBackArray={advancedCTAFeedback}/>
       </div>
