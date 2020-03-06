@@ -8,8 +8,10 @@ class AnchorEventAlpha extends Component {
       <div className="mainWrapper">
         <div className="ctaEventContainer">
           <h4>Alpha</h4>
-          <StandardCTAComponent href="Beta"/>
-          <AdvancedCTAComponent href="Beta"/>
+          <div className="flex2Col">
+            <StandardCTAComponent href="Beta"/>
+            <AdvancedCTAComponent href="Beta"/>
+          </div>
         </div>
       </div>
     );
