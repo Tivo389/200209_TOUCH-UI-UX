@@ -59,7 +59,7 @@ p {
 a {
   font-size: $fsP;
   &:visited, &:focus, &:active {
-    color: $colorBlack;
+    // color: $colorBlack;
     outline: none;
     text-decoration: none;
   }
