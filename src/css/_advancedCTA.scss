@@ -1,0 +1,40 @@
+@charset 'utf-8';
+
+.ctaAdvanced {
+  flex: 0 0 auto;
+  background-image: none; // Firefox Negate
+  background: $colorCyan;
+  border-radius: 3px;
+  color: $colorWhite;
+  font-family: "Google Sans","Roboto","Arial",sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 1.4em 0;
+  padding: 0.9em 1.2em 0.8em 1.2em;
+  text-align: center;
+  text-decoration: none;
+  transition: all 100ms cubic-bezier(0.4, 0.4, 0, 1);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent; // Safari & Chrome Negate
+}
+
+.ctaAdvanced {
+  &:hover, &:active {
+    background: $colorCyanDark;
+    cursor: pointer;
+  }
+  &:focus {
+    background: $colorCyanDark;
+    color: $colorWhite;
+  }
+  &:active {
+    transform: translateY(3px);
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  @include tablet {
+    font-size: 1.6rem;
+    padding: 0.5em 0.8em 0.4em 0.8em;
+  }
+}
