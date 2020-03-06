@@ -25,11 +25,17 @@
   padding: 0 0 0 2em;
   margin: 0;
   & li {
-    margin: 0 0 0.25em 0;
+    margin: 0 0 0.6em 0;
     font-size: 1.2rem;
     letter-spacing: 0.02em;
     &:last-of-type {
       margin: 0;
     }
   }
+}
+
+.flex2Col {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
