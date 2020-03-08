@@ -470,7 +470,7 @@ li {
 
 .ctaContainer {
   border-top: 1px solid #cccccc;
-  padding: 6vw 0;
+  padding: 16px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -490,7 +490,7 @@ li {
     margin: 0 0 16px 0; }
   .ctaEventContainer p {
     color: #777777;
-    margin: 0 0 0.6em 0;
+    margin: 0 0 0.4em 0;
     font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: 0.02em;
@@ -513,9 +513,6 @@ li {
   background: blue;
   color: #FFFFFF; }
 
-.ctaObservation::-moz-focus-inner {
-  border: 0; }
-
 .ctaAdvanced:hover {
   background: red; }
 
@@ -524,9 +521,6 @@ li {
 
 .ctaAdvanced:active {
   background: blue; }
-
-.ctaAdvanced::-moz-focus-inner {
-  border: 0; }
 
 @media (any-hover: none) {
   .ctaAdvanced:hover, .ctaAdvanced:focus, .ctaAdvanced:active {
@@ -543,32 +537,51 @@ li {
     font-size: 1.6rem;
     padding: 0.5em 0.8em 0.4em 0.8em; } }
 
-.ctaAdvanced:hover {
-  background: red; }
-
-.ctaAdvanced:focus {
-  background: green; }
-
-.ctaAdvanced:active {
-  background: blue; }
-
-.ctaAdvanced::-moz-focus-inner {
-  border: 0; }
-
-@media (any-hover: none) {
-  .ctaAdvanced:hover, .ctaAdvanced:focus, .ctaAdvanced:active {
-    background: #00A5D5; }
-  .ctaAdvanced.hover {
-    background: red; }
-  .ctaAdvanced.focus {
-    background: green; }
-  .ctaAdvanced.active {
-    background: blue; } }
-
-@media (min-width: 768px) {
-  .ctaAdvanced {
-    font-size: 1.6rem;
-    padding: 0.5em 0.8em 0.4em 0.8em; } }
+.ctaProduction {
+  -webkit-tap-highlight-color: transparent;
+  color: #FFFFFF;
+  font-family: "Google Sans","Roboto","Arial",sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0.9em 1.2em 0.8em 1.2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none; }
+  .ctaProduction::before, .ctaProduction::after {
+    border-radius: 3px;
+    bottom: 0;
+    content: "";
+    display: inline-block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 120ms cubic-bezier(0, 0.4, 0.4, 1); }
+  .ctaProduction::before {
+    background: #006a8a;
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+    z-index: -10; }
+  .ctaProduction::after {
+    background: #00A5D5;
+    z-index: -20; }
+  .ctaProduction:active {
+    transform: translateY(3px); }
+  .ctaProduction:hover::before, .ctaProduction:focus::before, .ctaProduction:active::before {
+    opacity: 1;
+    transform: scale(1, 1); }
+  @media (any-hover: none) {
+    .ctaProduction {
+      transition: 60ms cubic-bezier(0, 0.4, 0.4, 1); }
+      .ctaProduction.active {
+        opacity: 1;
+        transform: scale(1, 1); } }
+  @media (min-width: 768px) {
+    .ctaProduction {
+      font-size: 1.6rem;
+      padding: 0.5em 0.8em 0.4em 0.8em; } }
 
 .mainWrapper {
   align-items: flex-start;
