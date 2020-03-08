@@ -1,13 +1,13 @@
 @charset 'utf-8';
 
 .ctaAdvanced {
-  &:hover, &.hover {
+  &:hover {
     background: red;
   }
-  &:focus, &.focus {
+  &:focus {
     background: green;
   }
-  &:active, &.active {
+  &:active {
     background: blue;
   }
   &::-moz-focus-inner {

@@ -516,13 +516,13 @@ li {
 .ctaObservation::-moz-focus-inner {
   border: 0; }
 
-.ctaAdvanced:hover, .ctaAdvanced.hover {
+.ctaAdvanced:hover {
   background: red; }
 
-.ctaAdvanced:focus, .ctaAdvanced.focus {
+.ctaAdvanced:focus {
   background: green; }
 
-.ctaAdvanced:active, .ctaAdvanced.active {
+.ctaAdvanced:active {
   background: blue; }
 
 .ctaAdvanced::-moz-focus-inner {
@@ -543,13 +543,13 @@ li {
     font-size: 1.6rem;
     padding: 0.5em 0.8em 0.4em 0.8em; } }
 
-.ctaAdvanced:hover, .ctaAdvanced.hover {
+.ctaAdvanced:hover {
   background: red; }
 
-.ctaAdvanced:focus, .ctaAdvanced.focus {
+.ctaAdvanced:focus {
   background: green; }
 
-.ctaAdvanced:active, .ctaAdvanced.active {
+.ctaAdvanced:active {
   background: blue; }
 
 .ctaAdvanced::-moz-focus-inner {

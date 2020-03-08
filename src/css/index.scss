@@ -7,9 +7,9 @@
 @import '_mediaQuery';
 @import '_deviceEventConfirmation';
 @import '_callToAction';
-@import '_observationCTA';
-@import '_advancedCTA';
-@import '_productionCTA';
+@import '_standardObservationCTA';
+@import '_advancedObservationCTA';
+@import '_advancedProductionCTA';
 
 .mainWrapper {
   align-items: flex-start;
