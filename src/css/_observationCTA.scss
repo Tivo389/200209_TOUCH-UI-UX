@@ -1,0 +1,23 @@
+@charset 'utf-8';
+
+.ctaObservation {
+  @include tablet {
+    font-size: 1.6rem;
+    padding: 0.5em 0.8em 0.4em 0.8em;
+  }
+  &:hover {
+    background: red;
+    color: $colorWhite;
+  }
+  &:focus {
+    background: green;
+    color: $colorWhite;
+  }
+  &:active {
+    background: blue;
+    color: $colorWhite;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}

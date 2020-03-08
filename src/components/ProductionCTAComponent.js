@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class AdvancedCTAComponent extends Component {
+class ProductionCTAComponent extends Component {
   render() {
     const {href} = this.props;
     return (
       <div className="ctaContainer">
         <p>Advanced / Observation</p>
         <a
-          className="cta ctaAdvanced"
+          className="cta ctaProduction"
           href={`/anchorEvent${href}`}
           onTouchStart={this.onTouchStart}
           onTouchEnd={this.onTouchEnd}
@@ -28,4 +28,4 @@ class AdvancedCTAComponent extends Component {
   };
 }
 
-export default AdvancedCTAComponent;
+export default ProductionCTAComponent;

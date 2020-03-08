@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import StandardCTAComponent from './StandardCTAComponent';
+import ObservationCTAComponent from './ObservationCTAComponent';
 import AdvancedCTAComponent from './AdvancedCTAComponent';
+import ProductionCTAComponent from './ProductionCTAComponent';
 
 class AnchorEventBeta extends Component {
   render() {
@@ -8,10 +9,9 @@ class AnchorEventBeta extends Component {
       <div className="mainWrapper">
         <div className="ctaEventContainer">
           <h4>Beta</h4>
-          <div className="flex2Col">
-            <StandardCTAComponent href="Alpha"/>
+            <ObservationCTAComponent href="Alpha"/>
             <AdvancedCTAComponent href="Alpha"/>
-          </div>
+            <ProductionCTAComponent href="Alpha"/>
         </div>
       </div>
     );

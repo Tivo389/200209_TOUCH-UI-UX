@@ -7,36 +7,18 @@
 @import '_mediaQuery';
 @import '_deviceEventConfirmation';
 @import '_callToAction';
+@import '_observationCTA';
 @import '_advancedCTA';
+@import '_productionCTA';
 
 .mainWrapper {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 32px 16px;
   width: 100%;
   &.fixed {
     position: fixed; // This keeps the screen still on mobile
   }
-}
-
-.feedback {
-  list-style-position: outside;
-  padding: 0 0 0 2em;
-  margin: 0;
-  & li {
-    margin: 0 0 0.6em 0;
-    font-size: 1.2rem;
-    letter-spacing: 0.02em;
-    &:last-of-type {
-      margin: 0;
-    }
-  }
-}
-
-.flex2Col {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
