@@ -5,9 +5,9 @@ class ProductionCTAComponent extends Component {
     const {href} = this.props;
     return (
       <div className="ctaContainer">
-        <p>Advanced / Observation</p>
+        <p>Advanced / Production</p>
         <a
-          className="cta ctaProduction"
+          className="ctaProduction"
           href={`/anchorEvent${href}`}
           onTouchStart={this.onTouchStart}
           onTouchEnd={this.onTouchEnd}

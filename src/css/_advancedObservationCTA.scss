@@ -10,9 +10,6 @@
   &:active {
     background: blue;
   }
-  &::-moz-focus-inner {
-    border: 0;
-  }
   @include cssAnyHoverNone {
     &:hover, &:focus, &:active {
       background: $colorCyan;
