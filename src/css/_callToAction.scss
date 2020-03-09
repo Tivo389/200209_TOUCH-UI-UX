@@ -19,13 +19,13 @@
 
 .ctaContainer {
   border-top: 1px solid $colorLightGray;
-  padding: 16px 0;
+  padding: 32px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  flex: 1 0 100%;
+  flex: 0 0 auto;
 }
 
 .ctaEventContainer {
@@ -36,15 +36,19 @@
   width: 100%;
   flex-direction: column;
   color: $colorGray;
+  padding: 16px 0 0 0;
   & h4 {
     margin: 0 0 16px 0;
   }
   & p {
     color: $colorGray;
-    margin: 0 0 0.4em 0;
+    margin: 0;
     font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: 0.02em;
     font-weight: bolder;
+    &:last-of-type {
+      margin: 0 0 0.6em 0;
+    }
   }
 }

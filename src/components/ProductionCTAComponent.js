@@ -5,7 +5,7 @@ class ProductionCTAComponent extends Component {
     const {href} = this.props;
     return (
       <div className="ctaContainer">
-        <p>Advanced / Production</p>
+        <p>Advanced / Production / CSS &amp; JS</p>
         <a
           className="ctaProduction"
           href={`/anchorEvent${href}`}
