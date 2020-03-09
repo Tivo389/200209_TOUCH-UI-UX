@@ -29,12 +29,30 @@
   justify-content: flex-start;
   width: 100%;
   user-select: none;
+  flex-wrap: wrap;
   .statusElement {
     font-size: 12px;
     color: $colorLightGray;
     font-weight: bolder;
     padding: 0.2em;
-    width: 100%;
+    &.touchEventElement {
+      width: 100%;
+      text-align: center;
+      padding: 0.4em;
+      color: $colorWhite;
+      background: $colorLightGray;
+      border-right: 2px solid white;
+      border-bottom: 2px solid white;
+      flex: 1 0 33.33%;
+      &:last-of-type {
+        border-bottom: 0;
+        border-right: 0;
+      }
+      &.active {
+        color: $colorWhite;
+        background: $colorDarkGray;
+      }
+    }
     & + .statusElement {
       margin: 0;
     }

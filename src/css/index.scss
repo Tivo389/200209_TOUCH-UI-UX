@@ -22,3 +22,14 @@
     position: fixed; // This keeps the screen still on mobile
   }
 }
+
+.flexRow {
+  flex-direction: row;
+}
+
+.touchEventContainer {
+  width: 100vw;
+  padding: 0;
+  margin: -32px -16px 16px -16px;
+  position: fixed;
+}

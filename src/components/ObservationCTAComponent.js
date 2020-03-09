@@ -5,7 +5,7 @@ class ObservationCTAComponent extends Component {
     const {href} = this.props;
     return (
       <div className="ctaContainer">
-        <p>Standard / Observation</p>
+        <p>STANDARD / OBSERVATION / CSS</p>
         <a className="cta ctaObservation" href={`/anchorEvent${href}`}>
           Move to {href}
         </a>

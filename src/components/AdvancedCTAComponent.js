@@ -5,7 +5,7 @@ class AdvancedCTAComponent extends Component {
     const {href} = this.props;
     return (
       <div className="ctaContainer">
-        <p>Advanced / Observation</p>
+        <p>ADVANCED / OBSERVATION / CSS &amp; JS</p>
         <a
           className="cta ctaAdvanced"
           href={`/anchorEvent${href}`}
