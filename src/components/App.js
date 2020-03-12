@@ -10,8 +10,8 @@ function App() {
       <a className="content" href="./anchorEventAlpha">
         200223: CTA Anchor Event Confirmation
       </a>
-      <a className="content" href="./carouselClick">
-        XXXXXX-XXX: Carousel / Click
+      <a className="content" href="./dragAndDrop">
+        200311 : Drag &amp; Drop
       </a>
     </div>
   );

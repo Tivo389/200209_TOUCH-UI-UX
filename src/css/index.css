@@ -614,6 +614,43 @@ li {
 .flexRow {
   flex-direction: row; }
 
+.iconCircle {
+  width: 132px;
+  height: 132px;
+  border-radius: 500px;
+  background: #00A5D5;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 160ms ease-in-out;
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.3); }
+  .iconCircle::before {
+    display: block;
+    content: "";
+    width: 132px;
+    height: 132px;
+    transition: 320ms ease-in-out;
+    border-radius: 500px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1) inset, 0 0 2px rgba(0, 0, 0, 0.1) inset;
+    opacity: 0; }
+  @media (any-hover: none) {
+    .iconCircle.active {
+      background: #56d9ff;
+      transform: translate(-50%, -50%) scale(0.95);
+      transform-origin: center center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.6); }
+      .iconCircle.active::before {
+        opacity: 1; } }
+  @media (any-hover: hover) {
+    .iconCircle:hover {
+      background: #09c8ff;
+      transform: translate(-50%, -50%) scale(0.95);
+      transform-origin: center center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.6); }
+      .iconCircle:hover::before {
+        opacity: 1; } }
+
 .touchEventContainer {
   width: 100vw;
   padding: 0;
