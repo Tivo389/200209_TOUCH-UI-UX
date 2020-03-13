@@ -7,15 +7,15 @@ class DragAndDrop extends Component {
   yAxis;
   xAxisStartEnd;
   yAxisStartEnd;
-  xAxisEnd;
-  yAxisEnd;
+  xAxisStartEnd;
+  yAxisStartEnd;
   xDistance;
   yDistance;
 
   // RENDER FUNCTION
   render() {
     return (
-      <div className="mainWrapper fixed" style={{ height: window.innerHeight }}>
+      <div className="circleContainer fixed" style={{ height: window.innerHeight }}>
         <div className="iconCircle"
           // onMouseDown={this.onMouseDown}
           // onMouseMove={throttle(this.onMouseMove, 16)}
@@ -23,7 +23,7 @@ class DragAndDrop extends Component {
           // onMouseLeave={this.onMouseUp}
           // onTouchCancel={this.onTouchEnd}
           onTouchStart={this.onTouchStart}
-          onTouchMove={throttle(this.onTouchMove, 16)}
+          onTouchMove={throttle(this.onTouchMove, 8)}
           onTouchEnd={this.onTouchEnd}>
         </div>
       </div>
@@ -32,26 +32,17 @@ class DragAndDrop extends Component {
 
   // EVENT FUNCTIONS
   onTouchStart = (e) => {
-    console.log('--------------------------------');
-    console.log('onTouchStart');
     toggleClass('.iconCircle', 'active', true);
     this.getCoordinates(e);
-    this.updateStartEndCoordinate();
     // this.handleStart(e, 'Touch');
   }
   onTouchMove = (e) => {
-    console.log('--------------------------------');
-    console.log('onTouchMove');
     this.getCoordinates(e);
-    this.calculateDistance();
     this.applyCoordinates();
     // this.handleMove(e);
   }
   onTouchEnd = (e) => {
-    console.log('--------------------------------');
-    console.log('onTouchEnd');
     toggleClass('.iconCircle', 'active', false);
-    this.updateStartEndCoordinate();
     // this.handleEnd('Touch');
     // e.preventDefault();
   }
@@ -88,27 +79,12 @@ class DragAndDrop extends Component {
   getCoordinates = (e) => {
     this.xAxis = Math.round(e.clientX) || Math.round(e.targetTouches[0].clientX);
     this.yAxis = Math.round(e.clientY) || Math.round(e.targetTouches[0].clientY);
-    console.log(`this.xAxis: ${this.xAxis}`);
-    console.log(`this.yAxis: ${this.yAxis}`);
-  };
-  updateStartEndCoordinate = () => {
-    this.xAxisStartEnd = this.xAxis;
-    this.yAxisStartEnd = this.yAxis;
-    console.log(`this.xAxisStartEnd: ${this.xAxisStartEnd}`);
-    console.log(`this.yAxisStartEnd: ${this.yAxisStartEnd}`);
-  };
-  calculateDistance = () => {
-    this.xDistance = this.xAxis - this.xAxisStartEnd;
-    this.yDistance = this.yAxis - this.yAxisStartEnd;
-    console.log(`this.xDistance: ${this.xDistance}`);
-    console.log(`this.yDistance: ${this.yDistance}`);
-
   };
   applyCoordinates = () => {
     const circle = document.querySelector('.iconCircle');
     circle.style = `transform: translate(
-      calc(-50% + ${this.xDistance}px),
-      calc(-50% + ${this.yDistance}px)
+      ${this.xAxis - (window.innerWidth / 2)}px,
+      ${this.yAxis - (window.innerHeight / 2)}px
     );`
   };
 }
