@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 import { toggleClass, throttle } from './Helper';
 
 class DragAndDrop extends Component {
+  // CLASS VARIABLES
+  xAxis;
+  yAxis;
+  xAxisStartEnd;
+  yAxisStartEnd;
+  xAxisEnd;
+  yAxisEnd;
+  xDistance;
+  yDistance;
+
+  // RENDER FUNCTION
   render() {
     return (
       <div className="mainWrapper fixed" style={{ height: window.innerHeight }}>
@@ -19,16 +30,28 @@ class DragAndDrop extends Component {
     );
   }
 
+  // EVENT FUNCTIONS
   onTouchStart = (e) => {
-    // this.handleStart(e, 'Touch');
+    console.log('--------------------------------');
+    console.log('onTouchStart');
     toggleClass('.iconCircle', 'active', true);
+    this.getCoordinates(e);
+    this.updateStartEndCoordinate();
+    // this.handleStart(e, 'Touch');
   }
   onTouchMove = (e) => {
+    console.log('--------------------------------');
+    console.log('onTouchMove');
+    this.getCoordinates(e);
+    this.calculateDistance();
+    this.applyCoordinates();
     // this.handleMove(e);
-    // 999 CONTINUE HERE
   }
   onTouchEnd = (e) => {
+    console.log('--------------------------------');
+    console.log('onTouchEnd');
     toggleClass('.iconCircle', 'active', false);
+    this.updateStartEndCoordinate();
     // this.handleEnd('Touch');
     // e.preventDefault();
   }
@@ -61,12 +84,32 @@ class DragAndDrop extends Component {
     // toggleClass('.locationIndicator', 'active', false);
   };
 
-  // FUNCTIONS / OTHER
-  setXY = (e) => {
-    // this.xCoordinate = Math.round(e.clientX) || Math.round(e.targetTouches[0].clientX);
-    // this.yCoordinate = Math.round(e.clientY) || Math.round(e.targetTouches[0].clientY);
-    // document.querySelector('#xCoordinate').innerText = this.xCoordinate;
-    // document.querySelector('#yCoordinate').innerText = this.yCoordinate;
+  // COMPONENT FUNCTIONS
+  getCoordinates = (e) => {
+    this.xAxis = Math.round(e.clientX) || Math.round(e.targetTouches[0].clientX);
+    this.yAxis = Math.round(e.clientY) || Math.round(e.targetTouches[0].clientY);
+    console.log(`this.xAxis: ${this.xAxis}`);
+    console.log(`this.yAxis: ${this.yAxis}`);
+  };
+  updateStartEndCoordinate = () => {
+    this.xAxisStartEnd = this.xAxis;
+    this.yAxisStartEnd = this.yAxis;
+    console.log(`this.xAxisStartEnd: ${this.xAxisStartEnd}`);
+    console.log(`this.yAxisStartEnd: ${this.yAxisStartEnd}`);
+  };
+  calculateDistance = () => {
+    this.xDistance = this.xAxis - this.xAxisStartEnd;
+    this.yDistance = this.yAxis - this.yAxisStartEnd;
+    console.log(`this.xDistance: ${this.xDistance}`);
+    console.log(`this.yDistance: ${this.yDistance}`);
+
+  };
+  applyCoordinates = () => {
+    const circle = document.querySelector('.iconCircle');
+    circle.style = `transform: translate(
+      calc(-50% + ${this.xDistance}px),
+      calc(-50% + ${this.yDistance}px)
+    );`
   };
 }
 

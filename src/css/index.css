@@ -636,6 +636,7 @@ li {
     opacity: 0; }
   @media (any-hover: none) {
     .iconCircle.active {
+      transition: none;
       background: #56d9ff;
       transform: translate(-50%, -50%) scale(0.95);
       transform-origin: center center;
@@ -644,12 +645,13 @@ li {
         opacity: 1; } }
   @media (any-hover: hover) {
     .iconCircle:hover {
-      background: #09c8ff;
+      background: #09c8ff; }
+      .iconCircle:hover::before {
+        opacity: 1; }
+    .iconCircle.active {
       transform: translate(-50%, -50%) scale(0.95);
       transform-origin: center center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.6); }
-      .iconCircle:hover::before {
-        opacity: 1; } }
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.6); } }
 
 .touchEventContainer {
   width: 100vw;

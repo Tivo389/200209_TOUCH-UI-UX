@@ -48,6 +48,7 @@
   }
   @include cssAnyHoverNone {
     &.active {
+      transition: none;
       background: lighten($colorCyan, 25%);
       transform: translate(-50%, -50%) scale(0.95);
       transform-origin: center center;
@@ -60,12 +61,15 @@
   @include cssAnyHover {
     &:hover {
       background: lighten($colorCyan, 10%);
-      transform: translate(-50%, -50%) scale(0.95);
-      transform-origin: center center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.6);
       &::before {
         opacity: 1;
       }
+    }
+    &.active {
+      transform: translate(-50%, -50%) scale(0.95);
+      transform-origin: center center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.6);
+
     }
   }
 }
