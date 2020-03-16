@@ -22,6 +22,11 @@
 .fixed {
   position: fixed; // This keeps the screen still on mobile
 }
+.positionUpperLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .flexRow {
   flex-direction: row;
 }
@@ -38,7 +43,7 @@
   border-radius: 500px;
   background: $colorDeactivated;
   box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.3);
-  // transform-origin: center center;
+  transform-origin: center center;
   &::before {
     display: block;
     content: "";
