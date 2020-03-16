@@ -612,6 +612,11 @@ li {
 .fixed {
   position: fixed; }
 
+.positionUpperLeft {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
 .flexRow {
   flex-direction: row; }
 
@@ -627,7 +632,8 @@ li {
   height: 88px;
   border-radius: 500px;
   background: #ffc4c4;
-  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.3);
+  transform-origin: center center; }
   .iconCircle::before {
     display: block;
     content: "";
