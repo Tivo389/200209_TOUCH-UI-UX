@@ -18,12 +18,11 @@ class DragAndDrop extends Component {
         <div
           className="iconCircle"
           onMouseDown={this.onMouseDown}
-          onMouseMove={throttle(this.onMouseMove, 16)}
+          onMouseMove={throttle(this.onMouseMove, 8)}
           onMouseUp={this.onMouseUp}
-          // onTouchStart={this.onTouchStart}
-          // onTouchMove={throttle(this.onTouchMove, 8)}
-          // onTouchEnd={this.onTouchEnd}
-          >
+          onTouchStart={this.onTouchStart}
+          onTouchMove={throttle(this.onTouchMove, 8)}
+          onTouchEnd={this.onTouchEnd}>
         </div>
       </div>
     );
@@ -39,25 +38,27 @@ class DragAndDrop extends Component {
     this.getCoordinates(e);
     this.applyCoordinates();
   };
-
   handleEnd = () => {
     toggleClass('.iconCircle', 'active', false);
-    const iconCircle = document.querySelector('.iconCircle');
     const regexPattern = /\(.+\)/;
-    const regexMatch = iconCircle.style.transform.match(regexPattern);
-    this.transformValue = regexMatch[0].slice(1,-1);
+    const regexMatch = document.querySelector('.iconCircle').style.transform.match(regexPattern);
+    if (regexMatch) {
+      this.transformValue = regexMatch[0].slice(1,-1);
+    }
   };
 
-  // EVENT FUNCTIONS
-  // onTouchStart = (e) => {
-  //   this.handleStart(e);
-  // }
-  // onTouchMove = (e) => {
-  //   this.handleMove(e);
-  // }
-  // onTouchEnd = (e) => {
-  //   this.handleEnd();
-  // }
+  // TOUCH EVENT FUNCTIONS
+  onTouchStart = (e) => {
+    this.handleStart(e);
+  };
+  onTouchMove = (e) => {
+    this.handleMove(e);
+  };
+  onTouchEnd = (e) => {
+    this.handleEnd();
+  };
+
+  // MOUSE EVENT FUNCTIONS
   onMouseDown = (e) => {
     this.mouseDown = true;
     if (this.mouseDown) {
@@ -77,23 +78,42 @@ class DragAndDrop extends Component {
   };
   onMouseLeave = (e) => {
     if (this.mouseDown) { this.onMouseUp(); }
-  }
+  };
 
   // COMPONENT FUNCTIONS
   getCoordinates = (e) => {
     if (e.touches && e.touches.length > 1) {
       return;
-    } else if (window.pointerEvent) {
-      this.xAxis = Math.round(e.targetTouches[0].clientX);
-      this.yAxis = Math.round(e.targetTouches[0].clientY);
+    } else if (window.PointerEvent) {
+      if (e.targetTouches) {
+        this.xAxis = Math.round(e.targetTouches[0].clientX);
+        this.yAxis = Math.round(e.targetTouches[0].clientY);
+      } else {
+        this.xAxis = Math.round(e.clientX);
+        this.yAxis = Math.round(e.clientY);
+      }
     } else {
       this.xAxis = Math.round(e.clientX);
       this.yAxis = Math.round(e.clientY);
     }
+    this.refineCoordinates();
+  };
+  refineCoordinates = () => {
+    if (this.xAxis <= 0) {
+      this.xAxis = 0;
+    } else if (this.xAxis >= window.innerWidth) {
+      this.xAxis = window.innerWidth;
+    }
+    if (this.yAxis <= 0) {
+      this.yAxis = 0;
+    } else if (this.yAxis >= window.innerHeight) {
+      this.yAxis = window.innerHeight;
+    }
+    console.log(`xAxis: ${this.xAxis}`);
+    console.log(`yAxis: ${this.yAxis}`);
   };
   applyCoordinates = () => {
-    const circle = document.querySelector('.iconCircle');
-    circle.style = `transform: translate(
+    document.querySelector('.iconCircle').style = `transform: translate(
       ${this.xAxis - (document.querySelector('.circleContainer').offsetWidth / 2)}px,
       ${this.yAxis - (document.querySelector('.circleContainer').offsetHeight / 2)}px
     );`
